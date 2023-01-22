@@ -27,13 +27,13 @@ description: >-                        # used by seo meta and the atom feed
   Blog Hacking Ético, WriteUps, Noticias
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://yorch82.github.io'
+url: 'https://baShMarin.github.io'
 
 github:
-  username: yorch82             # change to your github username
+  username: baShMarin             # change to your github username
 
 LinkedIn:
-  username: yorch82            # change to your LinkedIn username
+  username: baShMarin            # change to your LinkedIn username
 
 social:
   # Change to your full name.
@@ -43,10 +43,10 @@ social:
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/yorch82       # change to your github homepage
+    - https://github.com/baShMarin       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/yorch82
+    - https://www.linkedin.com/in/baShMarin
 
 google_site_verification:               # fill in to your verification string
 
