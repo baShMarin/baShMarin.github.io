@@ -37,7 +37,7 @@ function mkt(){
 Accedemos al directorio de trabajo `nmap` e iniciamos nuestra fase de reconocimiento realizando un `ping` a la IP de la máquina para comprobar que esté activa y detectamos su sistema operativo basándonos en el `ttl` de una traza **ICMP**.
 
 ```bash
-❯ ping -c 1 10.0.2.15
+❯ ping -c 1 
 PING 10.129.247.12 (10.129.247.12) 56(84) bytes of data.
 64 bytes from 10.129.247.12: icmp_seq=1 ttl=63 time=42.3 ms
 
