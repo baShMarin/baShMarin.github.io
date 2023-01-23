@@ -1,5 +1,5 @@
 ---
-title: MASTERD - Metasploitable (Starting Point)
+title: WR - Metasploitable2
 published: true
 categories: [Linux]
 tags: [eJPT, eWPT, eCPPTv2, OSCP, Fácil]
