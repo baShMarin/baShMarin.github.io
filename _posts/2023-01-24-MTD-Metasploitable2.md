@@ -55,98 +55,20 @@ Continuamos con la enumeración de los **65535** puertos en la máquina.
 ```bash
 nmap -p- --open --min-rate 5000 -vvv -n -Pn 10.129.247.12 -oG allPorts
 
-PORT   STATE SERVICE REASON
-23/tcp open  telnet    Linux telnetd
+
 ```
 
-### Reconocimiento Web
+### Análisis de puertos y vulnerabilidades.
 
 * * *
 
-Iniciamos el reconocimiento del servicio web con la herramienta `whatweb` la cual nos muestra información sobre las tecnologías web que incluyen sistemas de gestión de contenido (CMS), plataformas de blogs, paquetes de estadísticas / análisis, bibliotecas JavaScript, servidores web y dispositivos integrados.
 
-```bash
-❯ whatweb http://goodgames.htb
-http://goodgames.htb [200 OK] Bootstrap, Country[RESERVED][ZZ], Frame, HTML5, HTTPServer[Werkzeug/2.0.2 Python/3.9.2], IP[10.10.11.130], JQuery, Meta-Author[_nK], PasswordField[password], Python[3.9.2], Script, Title[GoodGames | Community and Store], Werkzeug[2.0.2], X-UA-Compatible[IE=edge]
-```
 
-Examinamos la página web pero no econtramos ninguna funcionalidad salvo un icono que nos abre un panel de login. Tratamos de realizar una inyección SQL pero el campo de correo está con validación con lo que procedemos a interceptar la petición con `BurpSuite` y tratar de inyectar el típico `test@test.com' or 1=1-- -`
+Examinamos 
 
-<img src="/assets/HTB/GoodGames/burp.png">
 
-En la ventana de la respuesta observamos que nos asignan una cookie de sesión. Redirigimos la petición a la página web y accedemos al perfil de admin
 
-<img src="/assets/HTB/GoodGames/admin.png">
-
-Nos percatamos de un icono de un engranaje el cual nos lleva al dominio `internal-administration.goodgames.htb`. Agregamos a nuestro `/etc/hosts` y observamos su contenido
-
-<img src="/assets/HTB/GoodGames/flasklogin.png">
-
-No tenemos credenciales pero sabemos que el campo de email del panel de login de la página principal es vulnerable a inyecciones SQL. Vamos a enumerar bases de datos, tablas y columnas de forma manual con BurpSuite. Capturamos la petición de login nuevamente e iniciamos pruebas.
-
-Primero de todo vamos a tratar de aplicar un ordenamiento de los datos por una columna determinada la cual iremos ajustando hasta que la respuesta en el `content-Length` sea diferente. Empezamos por 100 donde tenemos una respuesta de 33490 hasta llegar a 4 donde tenemos una respuesta de 9267. Ya sabemos que tiene 4 columnas.
-
-<img src="/assets/HTB/GoodGames/orderby.png">
-
-Sabiendo el número exacto procedemos a aplicar una selección con `union select` y en la respuesta observamos que nos representa el contenido de la columna 4. 
-
-<img src="/assets/HTB/GoodGames/unionselect.png">
-
-Sustituimos el 4 por la query que nos muestra todas las bases de datos que existen. En este caso vemos dos, information_schema y main
-
-<img src="/assets/HTB/GoodGames/schema.png">
-
-Seguimos enumerando las tablas existentes en la tabla main. Localizamos blog, blog_comment y user
-
-<img src="/assets/HTB/GoodGames/table.png">
-
-Procedemos a listar columnas de la tabla users. Localizamos id, email, password y name
-
-<img src="/assets/HTB/GoodGames/columns.png">
-
-Finalmente sólo nos queda listar el contenido de las columnas password y name
-
-<img src="/assets/HTB/GoodGames/user.png">
-<img src="/assets/HTB/GoodGames/pass.png">
-
-Obtenemos una password hasheada. Utilizamos la pàgina de `crackstation` para revelar la contraseña en texto claro
-
-<img src="/assets/HTB/GoodGames/crackstation.png">
-
-Volvemos al panel de logi de Flask y con las credenciales obtenidas ganamos acceso.
-
-<img src="/assets/HTB/GoodGames/dashboard.png">
-
-Explorando el dashboard aparentemente no tiene mucha funcionalidad salvo que nos permite modificar datos nuestro perfil. Probamos modificando el nombre y vemos el output de este campo en pantalla. Probamos con { { 7 x 7 } } a ver si es vulnerable a SSTI
-
-<img src="/assets/HTB/GoodGames/ssti.png">
-
-Sabiendo que es vulnerable vamos a la sección de SSTI de  `PayloadAllTheThings` y buscamos un payload el cual nos debe mostrar si podemos derivar el SSTI a un RCE mostrándonos el output del comando `id`
-
-<img src="/assets/HTB/GoodGames/payload.png">
-<img src="/assets/HTB/GoodGames/id.png">
-
-Sustituimos el comando id por el onliner de bash para entablar una reverse shell y nos ponemos en escucha por el puerto 443 en nuestro equipo
-
-<img src="/assets/HTB/GoodGames/revshell.png">
-
-```bash
-❯ nc -nlvp 443
-listening on [any] 443 ...
-connect to [10.10.14.73] from (UNKNOWN) [10.10.11.130] 50558
-bash: cannot set terminal process group (1): Inappropriate ioctl for device
-bash: no job control in this shell
-root@3a453ab39d3d:/backend# whoami
-whoami
-root
-root@3a453ab39d3d:/backend# hostname -I
-hostname -I
-172.19.0.2 
-```
-
-Hemos ganado acceso a la máquina pero observando la IP de la misma nos percatamos de que estamos dentro de un contenedor Docker
-
-### Escalada De Privilegios Vía Docker Escape
+### Escalada De Privilegios 
 
 * * *
 
