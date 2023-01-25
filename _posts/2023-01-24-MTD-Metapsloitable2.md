@@ -15,7 +15,6 @@ Técnicas Vistas:
 
 - **VSFTP**
 - **Telnet**
-- **SMB/SAMBA**
 - **Ataques de diccionario por fuerza bruta**
 - **Metasploit-Framework**
 
