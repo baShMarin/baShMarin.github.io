@@ -135,6 +135,7 @@ Dentro del directorio #DVWA podremos encontrar un login donde nos dan los creden
 <img src="/assets/HTB/Metasploitable/phpinfo.png">
 
 Podremos encontrar acceso al servidor tomcat 
+
 * * *
 
 Hemos completado la máquina **Metasploitable** de HackTheBox!! Happy Hacking!!
