@@ -121,7 +121,6 @@ metasploitable login:
 
 * * *
 
-
 ### Análisis web
 En el puerto 80 podremos encontrar el servicio http, accederemos en el navegador con la dirección ip http://192.168.1.36:80.
 Examinamos la web donde nos da de nuevo las credenciales de usuario y contraseña y varios servicios para poder entrar.
