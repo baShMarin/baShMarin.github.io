@@ -137,6 +137,6 @@ Dentro del directorio #DVWA podremos encontrar un login donde nos dan los creden
 Podremos encontrar acceso al servidor tomcat 
 * * *
 
-Hemos completado la máquina **GoodGames** de HackTheBox!! Happy Hacking!!
+Hemos completado la máquina **Metasploitable** de HackTheBox!! Happy Hacking!!
 
-<img src="/assets/HTB/GoodGames/pwned.png">
+
