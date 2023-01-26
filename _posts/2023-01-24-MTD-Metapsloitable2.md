@@ -121,11 +121,12 @@ metasploitable login:
 
 ### SSH 
 Examinamos el ```puerto 22```. Usando la herramienta ya usada previamente ```Nessus y nikto```, encontramos que el servicio ```OpenSSH 4.7p1``` tiene los credenciales por defecto. ___(user)___ 
-Usamos esta vulnerabilidad para conectarnos directamente por ssh y obtener permisos root dentro de la máquina.
+Usamos esta vulnerabilidad para conectarnos directamente por ssh.
+Conseguimos entrar y obtener un ```tunel seguro ssh```, con la herramienta ```netcat``` podríamos poner la máquina a la escucha y enviarnos archivos con una ```shell remota```
 
 ```bash
-ssh user@192.168.1.36
-user@192.168.1.36's password:
+ssh msfadmin@192.168.1.36
+msfadmin@192.168.1.36's password:
 Linux metasploitable 2.6.24-16-server #1 SMP Thu Apr 10 01:28:00 UTC 2008 i686
 
 The programas included with Ubuntu system are free software; 
@@ -136,11 +137,11 @@ Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable 
 To access official Ubuntu documentation please visit:
 http://help.ubuntu.com/
 Last login: Thu Jan 18 15:34:18 2016 from 192.168.0.193
-user@metasploitable:~$ id
-uid=1001(user) gid=1001(user) groups=1001(user)
-user@metasploitable:~$ uname -a
+msfadmin@metasploitable:~$ id
+uid=1001(root) gid=1001(root) groups=1001(root)
+msfadmin@metasploitable:~$ uname -a
 Linux metasploitable 2.6.24-16-server #1 SMP Thu Apr 10 13:58:00 UTC 2008 i686 GNU/Linux
-user@metasploitable:~$
+msfadmin@metasploitable:~$
 ```
 
 * * *
