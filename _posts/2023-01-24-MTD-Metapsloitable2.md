@@ -8,8 +8,8 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Fácil]
 <img src="/assets/HTB/Metasploitable/first.jpeg">
 
 ¡Hola!
-Vamos a resolver de la máquina `Metasploitable2` de dificultad "Fácil".
-Metasploitable es una máquina virtual Linux intencionadamente vulnerable. Esta máquina virtual puede utilizarse para impartir formación en seguridad, probar herramientas de seguridad y practicar técnicas habituales de pruebas de penetración. 
+Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Metasploitable2` de dificultad "Fácil".
+`Metasploitable` es una máquina virtual Linux intencionadamente vulnerable. Esta máquina virtual puede utilizarse para impartir formación en seguridad, probar herramientas de seguridad y practicar técnicas habituales de pruebas de penetración. 
 
 Técnicas Vistas: 
 
@@ -47,8 +47,8 @@ rtt min/avg/max/mdev = 42.314/42.314/42.314/0.000 ms
 ```
 Identificamos que es una maquina **Linux** debido a su ttl (time to live) correspondiente a 63 (Disminuye en 1 debido a que realiza un salto adicional en el entorno de HackTHeBox).
 
-* TTL => 64 Linux
-* TTL => 128 Windows
+* `TTL => 64 Linux`
+* `TTL => 128 Windows`
 
 Continuamos con la enumeración de los **65535** puertos en la máquina.
 
@@ -89,9 +89,11 @@ cat allPorts
 ```
 # Análisis
 
+
+### Vulnerabilidades críticas 
 * * *
 ### Telnet
-Examinamos el puerto ```23 telnet``` siendo común en conexiones vía ```telnet```. Lanzaremos una conexión hacia el puerto 23 vía telnet. Donde nos dará acceso a una ```shell``` y nos dirá las credenciales con usuario y contraseña.
+Examinamos el puerto `23 telnet` siendo común en conexiones vía `telnet`. Lanzaremos una conexión hacia el puerto 23 vía telnet. Donde nos dará acceso a una `shell` y nos dirá las credenciales con usuario y contraseña.
 Dentro de la máquina podremos encontrar varios directorios con credenciales de los servicios usados en metasploitable2.
 
 
@@ -120,9 +122,9 @@ metasploitable login:
 ```
 
 ### SSH 
-Examinamos el ```puerto 22```. Usando la herramienta ya usada previamente ```Nessus y nikto```, encontramos que el servicio ```OpenSSH 4.7p1``` tiene los credenciales por defecto. ___(user)___ 
+Examinamos el `puerto 22`. Usando la herramienta ya usada previamente `Nessus y nikto`, encontramos que el servicio `OpenSSH 4.7p1` tiene los credenciales por defecto. ___(user)___ 
 Usamos esta vulnerabilidad para conectarnos directamente por ssh.
-Conseguimos entrar y obtener un ```tunel seguro ssh```, con la herramienta ```netcat``` podríamos poner la máquina a la escucha y enviarnos archivos con una ```shell remota```
+Conseguimos entrar y obtener un `tunel seguro ssh`, con la herramienta `netcat` podríamos poner la máquina a la escucha y enviarnos archivos con una `shell remota`
 
 ```bash
 ssh msfadmin@192.168.1.36
@@ -147,7 +149,7 @@ msfadmin@metasploitable:~$
 * * *
 
 ### Análisis web
-En el puerto 80 podremos encontrar el servicio http, accederemos en el navegador con la dirección ip ```http://192.168.1.36:80```
+En el puerto 80 podremos encontrar el servicio http, accederemos en el navegador con la dirección ip `http://192.168.1.36:80`
 Examinamos la web donde nos da de nuevo las credenciales de usuario y contraseña y varios servicios para poder entrar.
 
 <img src="/assets/HTB/Metasploitable/puerto80.png">
@@ -158,12 +160,12 @@ Dentro del directorio #DVWA podremos encontrar un login donde nos dan los creden
 <img src="/assets/HTB/Metasploitable/phpinfo.png">
 
 
-#### Exploits
+# Exploits
 
-Accederemos al directorio ```exploits```. Y utilizaremos ```metasploit-framework``` para hacer una ataque hacia el login de tomcat. 
+Accederemos al directorio `exploits`. Y utilizaremos `metasploit-framework` para hacer una ataque hacia el login de tomcat. 
 Utilizaremos el 
 
-Podremos encontrar acceso al servidor ```tomcat``` en el ```puerto 8180```, y podremos acceder mediante el navegador ```https://192.168.1.36:8180``` encontrando un login para poder acceder al tomcat administrator.
+Podremos encontrar acceso al servidor `tomcat` en el `puerto 8180`, y podremos acceder mediante el navegador `https://192.168.1.36:8180` encontrando un login para poder acceder al tomcat administrator.
 
 Utilizaremos metaexploit para poder acceder al login de tomcat.
 
@@ -172,9 +174,15 @@ Utilizaremos metaexploit para poder acceder al login de tomcat.
 
 ```
 
+### VNC
+Examinamos el puerto `VNC` y usamos hydra para hacer un ataque de diccionario hacia el login, hayando varias credenciales y pudiendo acceder con el servicio `VNC Viewer` teniendo control absoluto a la máquina con una `interfaz gráfica`
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F6pdDHR7myI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 
 * * *
 
-Hemos completado la máquina **Metasploitable** de HackTheBox!! Happy Hacking!!
+
 
 
