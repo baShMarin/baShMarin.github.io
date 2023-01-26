@@ -122,7 +122,7 @@ metasploitable login:
 * * *
 
 ### Análisis web
-En el puerto 80 podremos encontrar el servicio http, accederemos en el navegador con la dirección ip http://192.168.1.36:80.
+En el puerto 80 podremos encontrar el servicio http, accederemos en el navegador con la dirección ip ```http://192.168.1.36:80```
 Examinamos la web donde nos da de nuevo las credenciales de usuario y contraseña y varios servicios para poder entrar.
 
 <img src="/assets/HTB/Metasploitable/puerto80.png">
@@ -132,7 +132,15 @@ Dentro del directorio #DVWA podremos encontrar un login donde nos dan los creden
 
 <img src="/assets/HTB/Metasploitable/phpinfo.png">
 
-Podremos encontrar acceso al servidor tomcat 
+Podremos encontrar acceso al servidor ```tomcat``` en el ```puerto 8180```, y podremos acceder mediante el navegador ```https://192.168.1.36:8180``` encontrando un login para poder acceder al tomcat administrator.
+
+Utilizaremos metaexploit para poder acceder al login de tomcat.
+
+```bash
+msfconsole -
+
+```
+
 
 * * *
 
