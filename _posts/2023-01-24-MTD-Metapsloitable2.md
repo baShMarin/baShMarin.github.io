@@ -19,7 +19,7 @@ Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Metasploi
 - **Servicio VNC**
 - **Meterpreter**
 
-### Preparación Entorno
+# Preparación Entorno
 
 * * *
 
