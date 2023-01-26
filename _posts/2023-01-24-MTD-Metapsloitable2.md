@@ -17,7 +17,7 @@ Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Metasploi
 - **Telnet**
 - **Uso de Hydra con repositorio SecList**
 - **Servicio VNC**
-- **Meterpreter**
+- **Metasploit-framework**
 
 # Preparación Entorno
 
