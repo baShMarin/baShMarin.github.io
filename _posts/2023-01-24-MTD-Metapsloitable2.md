@@ -84,10 +84,13 @@ cat allPorts
     Discovered open port 6000/tcp on 192.168.1.36
     Discovered open port 514/tcp on 192.168.1.36
     Completed Connect Scan at 21:21, 4.62s elapsed (1000 total ports)
-
-
-
 ```
+
+Continuamos con la fase de reconocimiento haciendo uso de `Nessus` recopilando varias vulnerabilidades.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iw9YLW8UdyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+* * *
 # Análisis
 
 
@@ -160,23 +163,21 @@ Dentro del directorio #DVWA podremos encontrar un login donde nos dan los creden
 
 <img src="/assets/HTB/Metasploitable/phpinfo.png">
 
+* * *
 
 # Exploits
 
 Accederemos al directorio `exploits`. Y utilizaremos `metasploit-framework` para hacer una ataque hacia el login de tomcat. 
-Utilizaremos el 
+Utilizaremos el siguiente exploit `auxiliary/scanner/http/tomcat_mgr_login `
+<img src="/assets/HTB/Metasploitable/msfconsole.png">
+<img src="/assets/HTB/Metasploitable/logincorrect.png">
 
-Podremos encontrar acceso al servidor `tomcat` en el `puerto 8180`, y podremos acceder mediante el navegador `https://192.168.1.36:8180` encontrando un login para poder acceder al tomcat administrator.
+Hallamos las `credenciales de tomcat` y desde la misma web podremos entrar al panel de administrador con las credenciales previas.
 
-Utilizaremos metaexploit para poder acceder al login de tomcat.
-
-```bash
-
-
-```
+<img src="/assets/HTB/Metasploitable/tomcatadmin.png">
 
 ### VNC
-Examinamos el puerto `VNC` y usamos hydra para hacer un ataque de diccionario hacia el login, hayando varias credenciales y pudiendo acceder con el servicio `VNC Viewer` teniendo control absoluto a la máquina con una `interfaz gráfica`
+Examinamos el puerto `VNC` y usamos hydra para hacer un ataque de diccionario hacia el login, hallando varias credenciales y pudiendo acceder con el servicio `VNC Viewer` teniendo control absoluto a la máquina con una `interfaz gráfica`
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F6pdDHR7myI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
