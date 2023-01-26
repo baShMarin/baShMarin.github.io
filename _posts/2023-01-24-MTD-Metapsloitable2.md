@@ -30,7 +30,7 @@ function mkt(){
 }
 ```
 
-### Reconocimiento
+# Reconocimiento
 
 * * *
 
@@ -87,7 +87,7 @@ cat allPorts
 
 
 ```
-### Análisis de puertos y vulnerabilidades.
+# Análisis
 
 * * *
 ### Telnet
@@ -119,6 +119,30 @@ metasploitable login:
 
 ```
 
+### SSH 
+Examinamos el ```puerto 22```. Usando la herramienta ya usada previamente ```Nessus y nikto```, encontramos que el servicio ```OpenSSH 4.7p1``` tiene los credenciales por defecto. ___(user)___ 
+Usamos esta vulnerabilidad para conectarnos directamente por ssh y obtener permisos root dentro de la máquina.
+
+```bash
+ssh user@192.168.1.36
+user@192.168.1.36's password:
+Linux metasploitable 2.6.24-16-server #1 SMP Thu Apr 10 01:28:00 UTC 2008 i686
+
+The programas included with Ubuntu system are free software; 
+the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+
+To access official Ubuntu documentation please visit:
+http://help.ubuntu.com/
+Last login: Thu Jan 18 15:34:18 2016 from 192.168.0.193
+user@metasploitable:~$ id
+uid=1001(user) gid=1001(user) groups=1001(user)
+user@metasploitable:~$ uname -a
+Linux metasploitable 2.6.24-16-server #1 SMP Thu Apr 10 13:58:00 UTC 2008 i686 GNU/Linux
+user@metasploitable:~$
+```
+
 * * *
 
 ### Análisis web
@@ -132,12 +156,18 @@ Dentro del directorio #DVWA podremos encontrar un login donde nos dan los creden
 
 <img src="/assets/HTB/Metasploitable/phpinfo.png">
 
+
+#### Exploits
+
+Accederemos al directorio ```exploits```. Y utilizaremos ```metasploit-framework``` para hacer una ataque hacia el login de tomcat. 
+Utilizaremos el 
+
 Podremos encontrar acceso al servidor ```tomcat``` en el ```puerto 8180```, y podremos acceder mediante el navegador ```https://192.168.1.36:8180``` encontrando un login para poder acceder al tomcat administrator.
 
 Utilizaremos metaexploit para poder acceder al login de tomcat.
 
 ```bash
-msfconsole -
+
 
 ```
 
