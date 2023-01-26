@@ -13,7 +13,7 @@ Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Metasploi
 
 ### Técnicas Vistas: 
 
-- **SSH**
+- **Túneles SHH**
 - **Telnet**
 - **Uso de Hydra con repositorio SecList**
 - **Servicio VNC**
