@@ -182,7 +182,9 @@ Examinamos el puerto `VNC` y usamos hydra para hacer un ataque de diccionario ha
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F6pdDHR7myI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
+Y con estas vulnerabilidades encontradas vemos lo fácil que ha sido conseguir el control remoto completo de la máquina `metasploitable2`
 
+Un saludo!
 * * *
 
 
