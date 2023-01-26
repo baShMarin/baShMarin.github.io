@@ -11,12 +11,13 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Fácil]
 Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Metasploitable2` de dificultad "Fácil".
 `Metasploitable` es una máquina virtual Linux intencionadamente vulnerable. Esta máquina virtual puede utilizarse para impartir formación en seguridad, probar herramientas de seguridad y practicar técnicas habituales de pruebas de penetración. 
 
-Técnicas Vistas: 
+### Técnicas Vistas: 
 
-- **VSFTP**
+- **SSH**
 - **Telnet**
-- **Ataques de diccionario por fuerza bruta**
-- **Metasploit-Framework**
+- **Uso de Hydra con repositorio SecList**
+- **Servicio VNC**
+- **Meterpreter**
 
 ### Preparación Entorno
 
