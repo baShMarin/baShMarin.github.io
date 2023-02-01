@@ -24,7 +24,7 @@ Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Enigma` d
 
 * * *
 
-Antes de iniciar la fase de enumeración y reconocimiento procederemos a crear un directorio de trabajo con el nombre ``. Una vez creado accedemos al directorio y con la ayuda de la función que tenemos definida en la zshrc `mkt` crearemos cuatro directorios de trabajo `nmap, content, exploits y scripts` donde almacenaremos de una manera ordenada toda la información que vayamos recopilando de la máquina en función de su naturaleza.
+Antes de iniciar la fase de enumeración y reconocimiento procederemos a crear un directorio de trabajo con el nombre `enigma`. Una vez creado accedemos al directorio y con la ayuda de la función que tenemos definida en la zshrc `mkt` crearemos cuatro directorios de trabajo `nmap, content, exploits y scripts` donde almacenaremos de una manera ordenada toda la información que vayamos recopilando de la máquina en función de su naturaleza.
 
 ```bash
 function mkt(){
