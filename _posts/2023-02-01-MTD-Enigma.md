@@ -86,7 +86,8 @@ nmap -p- --open --min-rate 5000 -vvv -n -Pn 10.0.2.4 -oG allPorts
 
 Con nuestra herramienta `extractPorts` previamente definida en nuestra `.zshrc` podremos extraer los puertos más relevantes y hacerle un escaneo a dichos puertos, para ver el servicio usado en ellos.
 
-```bash [*] Extracting information...
+```bash
+[*] Extracting information...
    3   │ 
    4   │     [*] IP Address: 10.0.2.4
    5   │     [*] Open ports: 21,53,88,135,139,389,445,464,593,636,1801,2103,2105,2107,3268,3269,3306,3389,3700,4848,5985,7676,8009,8019,8020,8022,8027,8028,8031,8032,8080,8181,8282,8383,8443,8444,8484,8585,8686,9200,9300,9389,47001,49152,49153,49154,49155,49157,49158,4916
