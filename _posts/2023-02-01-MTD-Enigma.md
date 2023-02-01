@@ -524,10 +524,6 @@ Podremos entrar dentro de la máquina para poder ver lo ocurrido en ella:
 Y observad que la máquina ha quedado inoperativa por completo.
 
 
-
-
-
-
 * * *
 
 
