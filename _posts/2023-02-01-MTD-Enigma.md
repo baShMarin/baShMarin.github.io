@@ -82,8 +82,6 @@ nmap -p- --open --min-rate 5000 -vvv -n -Pn 10.0.2.4 -oG allPorts
        │ indows RPC/, 49312/open/tcp//ssh//Apache Mina sshd 0.8.0 (protocol 2.0)/, 49313/open/tcp//jenkins-listener//Jenkins TcpSlaveAgentListener/, 49336/open/tcp//msrpc//Microsoft Windows RPC/, 49337/open/tcp//msrpc//Microsoft Windows R
        │ PC/
    5   │ # Nmap done at Wed Feb  1 18:26:49 2023 -- 1 IP address (1 host up) scanned in 208.25 seconds
-
-
 ```
 
 Con nuestra herramienta `extractPorts` previamente definida en nuestra `.zshrc` podremos extraer los puertos más relevantes y hacerle un escaneo a dichos puertos, para ver el servicio usado en ellos.
@@ -379,7 +377,8 @@ Podemos encontrar un usuario y una contraseña útiles `User: perdicion` `Passwo
 ### Manage Desktop Central
 En nuestra fase de reconocimiento podremos ver que tenemos una vulnerabilidad llamada "ManageEngine" para ello haremos uso de `metasploit-framework`.
 
-```msf6 exploit(windows/http/manageengine_connectionid_write) > options
+```bash
+msf6 exploit(windows/http/manageengine_connectionid_write) > options
 
 Module options (exploit/windows/http/manageengine_connectionid_write):
 
