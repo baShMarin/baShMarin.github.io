@@ -1,29 +1,29 @@
 ---
-title: MTD - Metasploitable2
+title: MTD - Enigma 
 published: true
-categories: [Linux]
+categories: [Windows]
 tags: [eJPT, eWPT, eCPPTv2, OSCP, Fácil]
 ---
 
-<img src="/assets/HTB/Metasploitable/first.jpeg">
+<img src="/assets/HTB/Enigma/enigma.png">
 
 ¡Hola!
-Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Metasploitable2` de dificultad "Fácil".
+Vamos a hacer un análisis de las vulnerabilidades más críticas en  `Enigma` de dificultad "Fácil".
 `Metasploitable` es una máquina virtual Linux intencionadamente vulnerable. Esta máquina virtual puede utilizarse para impartir formación en seguridad, probar herramientas de seguridad y practicar técnicas habituales de pruebas de penetración. 
 
 ### Técnicas Vistas: 
 
-- **Túneles SHH**
-- **Telnet**
-- **Uso de Hydra con repositorio SecList**
-- **Servicio VNC**
-- **Metasploit-framework**
+- **FTP CONECTION**
+- **NETBIOS**
+- **SMBCLIENT**
+- **METERPRETER**
+- **ATAQUES Dos**
 
 # Preparación Entorno
 
 * * *
 
-Antes de iniciar la fase de enumeración y reconocimiento procederemos a crear un directorio de trabajo con el nombre `Metasploitable`. Una vez creado accedemos al directorio y con la ayuda de la función que tenemos definida en la zshrc `mkt` crearemos cuatro directorios de trabajo `nmap, content, exploits y scripts` donde almacenaremos de una manera ordenada toda la información que vayamos recopilando de la máquina en función de su naturaleza.
+Antes de iniciar la fase de enumeración y reconocimiento procederemos a crear un directorio de trabajo con el nombre ``. Una vez creado accedemos al directorio y con la ayuda de la función que tenemos definida en la zshrc `mkt` crearemos cuatro directorios de trabajo `nmap, content, exploits y scripts` donde almacenaremos de una manera ordenada toda la información que vayamos recopilando de la máquina en función de su naturaleza.
 
 ```bash
 function mkt(){
