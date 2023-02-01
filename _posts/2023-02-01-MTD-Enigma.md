@@ -520,17 +520,14 @@ C:\ManageEngine\DesktopCentral_Server\bin>start
 Podremos entrar dentro de la máquina para poder ver lo ocurrido en ella:
 
 <img src="/assets/HTB/Enigma/dos.png">
-* * *
+
+Y observad que la máquina ha quedado inoperativa por completo.
 
 
 
-* * *
 
-# Escalada de privilegios
 
-Y con estas vulnerabilidades encontradas vemos lo fácil que ha sido conseguir el control remoto completo de la máquina `Enigma`
 
-Un saludo!
 * * *
 
 
