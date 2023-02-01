@@ -467,6 +467,7 @@ meterpreter > getsystem
 [-] Already running as SYSTEM
 ```
 
+* * *
 
 #### ATAQUE DOS
 Una vez dentro del servicio y estando como SYSTEM, tendriamos la escala de privilegios realizada pero podremos realizar ataques DOS hacia la misma máquina haciendo un poco de `scripting`.
