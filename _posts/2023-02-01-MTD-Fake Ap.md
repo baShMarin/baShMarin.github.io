@@ -2,7 +2,7 @@
 title: MTD - Fake Ap 
 published: true
 categories: [Linux]
-tags: [eJPT, eWPT, eCPPTv2, OSCP, Fácil]
+tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 ---
 
 
@@ -19,7 +19,6 @@ como airgeddon.
 * * *
 
 # Preparación Entorno
-
 
 
 
