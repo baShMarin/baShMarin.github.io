@@ -19,6 +19,7 @@ como airgeddon.
 * * *
 
 # Preparación Entorno
+Para empezar con nuestro ejercicio comenzaremos con la creación del FakeAP con `rogueAP`. Para esto necesitaremos tener nuestra interfaz USB activada en modo monitor.
 
 
 
