@@ -7,8 +7,7 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 
 
 ¡Hola! Hoy vamos a montar un fake AP para poder obtener la contraseña WPA de la red Wireless,
-puede usarse un método manual con airbase-ng, o algún script automatizado
-como airgeddon.
+puede usarse un método manual con airbase-ng, o algún script automatizado.
 
 
 ### Técnicas Vistas: 
