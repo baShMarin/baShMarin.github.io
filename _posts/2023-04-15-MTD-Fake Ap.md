@@ -114,7 +114,7 @@ El comando `-D` hará que nuestro script se mantenga activo como un `devil` y en
 # HABILITAR SERVICIO DE APACHE
 En este punto de la conexión red podriamos hacer una aplicación web en relación con nuestra víctima (página web que suela frecuentar) y deberiamos configurarla en nuestro fichero `/etc/host`
 
-Ejemplo explicado: Podríamos crear un duplicado de la web de paypal.com haciendo que cuando nuestra víctima entre, se conectará directamente a nuestra máquina que con un simple script hará que el firewall le solicite reloguearse haciendo que se guarden las credenciales en nuestro fichero de archivo `etc/host`
+Podríamos crear un duplicado de la web de paypal.com haciendo que cuando nuestra víctima entre, se conectará directamente a nuestra máquina que con un simple script hará que el firewall le solicite reloguearse haciendo que se guarden las credenciales en nuestro fichero de archivo `etc/host`
 
 * * *
 
