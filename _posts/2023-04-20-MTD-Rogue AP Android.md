@@ -85,8 +85,13 @@ Una vez lanzada la plantilla solamente deberemos esperar en consola a que nos ap
 
 <img src="/assets/HTB/AndroidAP/waiting.png">
 
+Si desde algún dispositivo `Android` iniciamos el `WiFi` veremos la red disponible sin clave de acceso, podremos acceder ya que fuese "la red WiFi de un starbucks", y nos pedirá iniciar sesión.
+Todos los datos que introduzcamos serán reportados a nuestra consola, teniendo acceso a toda la información sensible.
+
 
 * * *
+
+*__Esto es un ejercicio con fines didácticos realizado para MasterD.__*
 
 
 
