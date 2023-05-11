@@ -37,3 +37,5 @@ La máquina `metasploitable2` al no usar unos parámetros de seguridad correctos
 <img src="/assets/HTB/Wireshark/IPADDR.png">
 
 * * *
+
+***Esto es un ejercicio con fines didácticos realizado para MasterD.***

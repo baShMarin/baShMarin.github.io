@@ -117,3 +117,4 @@ Podríamos crear un duplicado de la web de paypal.com haciendo que cuando nuestr
 
 * * *
 
+***Esto es un ejercicio con fines didácticos realizado para MasterD.***
