@@ -55,21 +55,17 @@ Para usar el modo terminal tendriamos que sustituir el parámetro `gui` por el p
 #### DEPENDENCIAS
 La misma aplicación nos dirá las herramientas necesarias para la instalación una vez desplegada la interfaz de instalación:
 
-* `php`
-* `dnsmasq`
-* `hostapd`
+* `python-nmap`
+* `python-whois`
 
 ```bash
-sudo apt-get install php
+sudo apt-get install 
 ```
 
 ```bash
-sudo apt-get install dnsmasq
+sudo apt-get install 
 ```
 
-```bash
-sudo apt-get install dnsmasq
-```
 * * *
 Una vez instalado todas las dependencias podremos seguir con el lanzamiento de `evilTrust`.
 <img src="/assets/HTB/AndroidAP/.png">
