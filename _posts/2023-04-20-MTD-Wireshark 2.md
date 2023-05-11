@@ -18,6 +18,9 @@ Vamos a trabajar con el laboratorio de `metasploitable2` y `wireshark` para obte
 
 # Captura resultante del esnifado
 
+<img src= >
+En este ejercicio con la captura de pantalla resultante del esnifado de red con `WireShark`
+
 * * * 
 
 # Usuarios, credenciales, IPS...

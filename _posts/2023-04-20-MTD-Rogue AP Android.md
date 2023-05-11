@@ -4,6 +4,7 @@ published: true
 categories: [Linux]
 tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 ---
+<img src="/assets/HTB/">
 
 ¡Hola! Hoy vamos a realizar el segundo ejercicio del módulo de envenenamiento y suplantación de identidad, en el ejercicio trabajaremos con el laboratorio de `wireshark` como ya vimos en el otro ejercicio.
 Vamos a trabajar con el laboratorio de `metasploitable2` y `wireshark` para obtener las capturas resultantes.
