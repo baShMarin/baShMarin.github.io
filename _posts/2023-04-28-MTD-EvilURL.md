@@ -75,7 +75,7 @@ Para utilizar nuestra interfaz de red, debemos de utilizarla en `mode monitor`. 
 # USO DE LA APLICACIÓN
 
 
-<img src="/assets/HTB/AndroidAP/.png">
+
 
 
 
