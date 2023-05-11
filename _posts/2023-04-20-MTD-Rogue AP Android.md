@@ -6,8 +6,7 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 ---
 
 
-¡Hola! Hoy vamos a realizar el segundo ejercicio del módulo de envenenamiento y suplantación de identidad, en el ejercicio trabajaremos con el laboratorio de `wireshark` como ya vimos en el otro ejercicio.
-Vamos a trabajar con el laboratorio de `metasploitable2` y `wireshark` para obtener las capturas resultantes.
+¡Hola! Hoy vamos a realizar el primer ejercicio del módulo de `Ingenieria Social`, esta vez usaremos un Rogue App pero en dispositivos `Android`. Estaremos usando la herramienta `EvilTrust` que nos facilita crear plantillas directamente desde la terminal y montarlas en nuestra interfaz de red.
 
 <img src="/assets/HTB/AndroidAP/INICIO.png">
 
