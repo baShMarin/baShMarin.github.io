@@ -6,7 +6,9 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 ---
 
 
-¡Hola! Hoy vamos a realizar el primer ejercicio del módulo de `Ingenieria Social`, esta vez usaremos un Rogue App pero en dispositivos `Android`. Estaremos usando la herramienta `EvilTrust` que nos facilita crear plantillas directamente desde la terminal y montarlas en nuestra interfaz de red.
+¡Hola! Hoy vamos a realizar el primer ejercicio del módulo de `Ingenieria Social`, esta vez usaremos un Rogue App pero en dispositivos `Android`. Estaremos usando la herramienta `EvilTrust` que nos facilita crear plantillas directamente desde la terminal y montarla en nuestra interfaz de red para lanzarla de inmediatamente.
+
+*__Esto es un ejercicio con fines didácticos realizado para MasterD.__*
 
 <img src="/assets/HTB/AndroidAP/INICIO.png">
 
@@ -89,8 +91,3 @@ Todos los datos que introduzcamos serán reportados a nuestra consola, teniendo 
 
 
 * * *
-
-*__Esto es un ejercicio con fines didácticos realizado para MasterD.__*
-
-
-
