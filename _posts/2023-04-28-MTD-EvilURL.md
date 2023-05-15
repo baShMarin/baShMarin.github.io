@@ -7,9 +7,7 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 
 
 ¡Hola! 
-
-
-<img src="/assets/HTB/AndroidAP/INICIO.png">
+Hoy vamos a realizar el segundo ejercicio del módulo de Ingeniería social, donde usaremos la heramienta `evilURL` para la generación de un nombre de dominio malicioso.
 
 ### Herramientas usadas: 
 - **evilURL**
@@ -18,13 +16,13 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 * * *
 
 # PRIMEROS PASOS
-
-
+Clonaremos el repositorio de github de `UndeadSec`
 ```bash 
 cd github/
 ```
+
 ```bash
-git clone https://github.com/
+git clone https://github.com/UndeadSec/EvilURL.git
 ```
 
 Una vez listo pasaremos a instalar los requisitos necesarios para la ejecución.
