@@ -27,28 +27,7 @@ cd github/
 git clone https://github.com/
 ```
 
-Una vez bajada la herramienta evilURL debemos entrar en ella y darle permisos de ejecución al lanzador.
-
-```bash
-cd 
-```
-
-```bash
-sudo 
-```
-
 Una vez listo pasaremos a instalar los requisitos necesarios para la ejecución.
-Podemos elegir entre 2 opciones para la instalación, con GUI o desde la misma terminal, en este caso usaremos GUI.
-
-```bash
-bash evilTrust.sh -m gui 
-```
-
-Para usar el modo terminal tendriamos que sustituir el parámetro `gui` por el parámetro `terminal`.
-<img src="/assets/HTB/AndroidAP/.png">
-
-
-
 
 * * * 
 
@@ -59,20 +38,27 @@ La misma aplicación nos dirá las herramientas necesarias para la instalación 
 * `python-whois`
 
 ```bash
-sudo apt-get install 
-```
-
-```bash
-sudo apt-get install 
+pip install python-nmap python-whois
 ```
 
 * * *
-Una vez instalado todas las dependencias podremos seguir con el lanzamiento de `evilTrust`.
-<img src="/assets/HTB/AndroidAP/.png">
+Una vez instalado todas las dependencias podremos seguir con el lanzamiento de `evilURL`.
+<img src="/assets/HTB/EvilURL/inicio.png">
 
-Para utilizar nuestra interfaz de red, debemos de utilizarla en `mode monitor`. Y elegiremos la interfaz de red `wlan0mon`.
+
 * * *
 # USO DE LA APLICACIÓN
+Para hacer uso de la aplicación necesitaremos tener instalado `python3` que viene previamente instalado en nuestro máquina `Kali Linux`.
+
+
+```bash
+python3 evilurl.py -c facebook.com -a
+```
+Usaremos el comando -C para crear el dominio falso. EvilURL nos creará automáticamente varios accesos a nuestro link "facebook.com".
+
+Por aquí dejo la captura de pantalla usando antiguamente EvilURL, ya que en la actualidad (2023) está en desuso, hay multitudes de alternativas a `evilURL`.
+
+<img src="/assets/HTB/EvilURL/uso.png">
 
 
 
