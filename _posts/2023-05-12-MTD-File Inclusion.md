@@ -2,7 +2,7 @@
 title: MTD - File Inclusion
 published: true
 categories: [Linux]
-tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
+tags: [eJPT, eWPT, eCPPTv2, OSCP, Dificil]
 ---
 
 
