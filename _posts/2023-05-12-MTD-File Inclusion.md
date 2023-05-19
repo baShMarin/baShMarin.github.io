@@ -54,13 +54,34 @@ Esta información podemos usarla para aplicarle ténicas de `fuzzing` con `OWAS-
 * * *
 
 # USO DE LA APLICACIÓN
-La aplicación que vamos a usar es `OWAS-ZAP` con técnicas de `fuzzing`. Usaremos diccionarios como `SecList` y `RockForYou`
+La aplicación que vamos a usar es `OWAS-ZAP` con técnicas de `fuzzing` cargando diccionarios, en este caso usaremos el diccionario del repositorio `AllPayloadThings` usando el fichero de `File Inclusion`
+
+<img src="assets/HTB/bWAPP/usopayload.png">
+
+Una vez configurado el fichero que vamos a usar, lanzamos el fuzzer y analizaremos los datos hallados.
+Podemos observar en el `Fuzzed 7` un fichero `etc/apache2/` lo que podría hacernos ver una apertura de seguridad muy seria.
+
+En nuestra máquina kali linux tenemos el repositorio de `webshells` con la cual podemos hacer una `shell` remota hacia nuestra máquina aprovechando la vulnerabilidad del servidor apache.
 
 ```bash
-
+cd /usr/share/webshells/php
 ```
 
-<img src="assets/HTB/">
+Usaremos el repositorio `php` ya que sabemos que el motor de la aplicacion web está en el lenguaje `php`.
+Dentro del directorio podremos encontrar diferentes tipos de webshell a usar. Nosotros cargaremos una `reverseshell`.
+En este caso tendremos que revisar el source code del fichero para configurar la dirección IP y puerto que usaremos.
+
+```bash
+nano php-reverse-shell.php
+```
+Una vez configurado nuestro archivo, tenemos que copiar en el directorio `/var/www/html`.
+
+```bash
+cp php-reverse-shell.php /var/www/html
+```
+Una vez configurado nuestro fichero a usar, podremos proceder a colocar nuestro enlace, previamente iniciando un servicio de apache2 y poniendo nuestra máquina a la escucha y cargaremos nuestra webshell desde el mismo link de la aplicación web.
+
+<img src="assets/HTB/bWAPP/webshell.png">
 
 
 
