@@ -1,5 +1,5 @@
 ---
-title: MTD - bWAPP file inclusion
+title: MTD - File Inclusion
 published: true
 categories: [Linux]
 tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
@@ -103,14 +103,6 @@ Podemos observar que estamos en el directorio /home/root/ de `beebox`
 <img src="assets/HTB/bWAPP/webshell.png">
 
 
-
-
-
-
-
 * * *
 
 *__Esto es un ejercicio con fines didácticos realizado para MasterD.__*
-
-
-
