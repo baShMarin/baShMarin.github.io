@@ -22,7 +22,7 @@ En este ejercicio con la captura de pantalla resultante del esnifado de red con 
 Estamos trabajando ante el laboratorio de `metasploitable2` como ya sabemos usa unas técnicas un poco inseguras en cuanto a cifrado y seguridad.
 
 Para la captura resultante hemos utilizado un parámetro con el filtro del `puerto 21` ; `clienteFTP`.
-<img src="/assets/HTB/Wireshark2/captura1.png">
+<img src="https://cdn.discordapp.com/attachments/1103281093643345932/1110216571865018511/captura1.png">
 
 
 Podemos observar varios resultados con el parámetro usado del `puerto 21`
@@ -34,7 +34,7 @@ Una vez hayada la captura nos dignaremos a ver un resultado en especifico, donde
 
 La máquina `metasploitable2` al no usar unos parámetros de seguridad correctos, deja visible esta información con el esnifado de red de `Wireshark`.
 
-<img src="/assets/HTB/Wireshark2/captura2.png">
+<img src="https://cdn.discordapp.com/attachments/1103281093643345932/1110216533864620172/captura2.png">
 
 * * *
 
