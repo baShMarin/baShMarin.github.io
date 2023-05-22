@@ -10,7 +10,7 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Medio]
 
 *__Esto es un ejercicio con fines didácticos realizado para MasterD.__*
 
-<img src="/assets/HTB/AndroidAP/INICIO.png">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245071028236349/INICIO.png?width=619&height=204">
 
 ### Herramientas usadas: 
 - **EvilTrust**
@@ -48,7 +48,7 @@ bash evilTrust.sh -m gui
 ```
 
 Para usar el modo terminal tendriamos que sustituir el parámetro `gui` por el parámetro `terminal`.
-<img src="/assets/HTB/AndroidAP/GUI.png">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245070424264755/GUI.png?width=955&height=564">
 
 
 
@@ -75,7 +75,7 @@ sudo apt-get install dnsmasq
 ```
 * * *
 Una vez instalado todas las dependencias podremos seguir con el lanzamiento de `evilTrust`.
-<img src="/assets/HTB/AndroidAP/GUI2.png">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245070680096859/GUI2.png?width=957&height=584">
 
 Para utilizar nuestra interfaz de red, debemos de utilizarla en `mode monitor`. Y elegiremos la interfaz de red `wlan0mon`.
 * * *
@@ -84,7 +84,7 @@ Una vez lanzada nuestra aplicación nos pedirá elegir una plantilla que usaremo
 
 Una vez lanzada la plantilla solamente deberemos esperar en consola a que nos aparezca las credenciales. Esto sucederá cuando el usuario entre en la red wifi e intente entrar en su cuenta ya sea facebook, google, staburcks, instagram... todas las plantillas que nos ofrece `evilTrust`.
 
-<img src="/assets/HTB/AndroidAP/waiting.png">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245071284076686/waiting.png?width=456&height=124">
 
 Si desde algún dispositivo `Android` iniciamos el `WiFi` veremos la red disponible sin clave de acceso, podremos acceder ya que fuese "la red WiFi de un starbucks", y nos pedirá iniciar sesión.
 Todos los datos que introduzcamos serán reportados a nuestra consola, teniendo acceso a toda la información sensible.

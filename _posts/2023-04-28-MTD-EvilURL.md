@@ -41,7 +41,7 @@ pip install python-nmap python-whois
 
 * * *
 Una vez instalado todas las dependencias podremos seguir con el lanzamiento de `evilURL`.
-<img src="/assets/HTB/EvilURL/inicio.png">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245388952289300/inicio.png?width=553&height=589">
 
 
 * * *
@@ -56,7 +56,7 @@ Usaremos el comando -C para crear el dominio falso. EvilURL nos creará automát
 
 Por aquí dejo la captura de pantalla usando antiguamente EvilURL, ya que en la actualidad (2023) está en desuso, hay multitudes de alternativas a `evilURL`.
 
-<img src="/assets/HTB/EvilURL/uso.png">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245389250068651/uso.png?width=936&height=589">
 
 
 
