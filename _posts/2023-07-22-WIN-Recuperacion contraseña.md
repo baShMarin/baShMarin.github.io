@@ -18,7 +18,7 @@ En primer lugar deberemos de encender nuestro equipo en modo seguro. Para ello e
 
 <img src="/assets/HTB/Windows11/inicio.png"">
 
-Para iniciar nuestro windows 11 en modo seguro deberemos de presionar la `tecla SHIFT` y seguido sin soltarla presionaremos en el icono de inicio y reiniciaremos el ordenador. Cuando se esté reiniciando podremos soltar la `tecla SHIFT`. Nos debería aparecer esta pantalla al reiniciarse el ordenador: 
+Para iniciar nuestro windows 11 en modo seguro deberemos de presionar la `tecla SHIFT` y seguido sin soltarla presionaremos en el icono de apagado (abajo a la derecha) y reiniciaremos el ordenador. Cuando se esté reiniciando podremos soltar la `tecla SHIFT`. Nos debería aparecer esta pantalla al reiniciarse el ordenador: 
 
 <img src="assets/HTB/Windows11/eligeunaopcion.png">
 
