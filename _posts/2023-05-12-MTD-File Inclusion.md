@@ -22,14 +22,14 @@ En este ejercicio realizaremos un `File inclusion`.
 En primer lugar usaremos `OWAS-ZAP` como proxy para indexar las páginas web y poder realizar un análisis más detallado.
 La herramienta viene preinstalada en nuestro `kali linux` por lo tanto solamente tendriamos que abrirlo desde el gestor de aplicaciones y acto seguido configurar el `proxy` en nuestro navegador.
 
-<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245804964315297/proxy.png?width=1193&height=575">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245804964315297/proxy.png">
 
 Acto seguido pasamos entrar a la web de nuestro máquina `bee-box`, en nuestro caso tendríamos la IP 10.0.2.5.
 
 
 Como podemos ver en este `login` tenemos las credenciales ya dadas, en este caso `bee` de usuario y `bug` como contraseña.
 Dentro de la aplicación web podemos encontrar en el apartado `A7` el ejercicio de `Remote & Local File Inclusion (RFI/LFI)`.
-<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246169310937119/intro.png?width=1077&height=589">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246169310937119/intro.png">
 
 * * * 
 
@@ -42,11 +42,11 @@ Esto sería un vacío donde podriamos realizar nuestras técnicas de intrusión.
 
 Observamos que dentro del link añade una particularidad, `?language=lang_en.php` donde podemos comenzar a intentar escalar privilegios usando `../../etc/passw` para subir entre carpetas dentro del servidor web y podriamos ver si nos devuelve el fichero sensible.
 
-<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246354879533207/etc_pass.png?width=1090&height=589">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246354879533207/etc_pass.png">
 
 Si analizamos el código fuente de la aplicación web, podemos ver que nos ha devuelto el fichero completo con sus directorios y nombres de usuario
 
-<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246460185907280/codigo_fuente.png?width=966&height=589">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246460185907280/codigo_fuente.png">
 
 Esta información podemos usarla para aplicarle ténicas de `fuzzing` con `OWAS-ZAP`. Eso lo veremos en el siguiente paso.
 
@@ -55,7 +55,7 @@ Esta información podemos usarla para aplicarle ténicas de `fuzzing` con `OWAS-
 # USO DE LA APLICACIÓN
 La aplicación que vamos a usar es `OWAS-ZAP` con técnicas de `fuzzing` cargando diccionarios, en este caso usaremos el diccionario del repositorio `AllPayloadThings` usando el fichero de `File Inclusion`
 
-<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246521154318436/usopayload.png?width=926&height=589">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110246521154318436/usopayload.png">
 
 Una vez configurado el fichero que vamos a usar, lanzamos el fuzzer y analizaremos los datos hallados.
 Podemos observar en el `Fuzzed 7` un fichero `etc/apache2/` lo que podría hacernos ver una apertura de seguridad muy seria.
