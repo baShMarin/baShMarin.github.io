@@ -7,7 +7,7 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Dificil]
 
 
 ¡Hola! 
-Vamos a resolver una máquina windows 11 bloqueada sin acceso a la contraseña del usuario administrador.
+Vamos a resolver el problema de una máquina windows 11 bloqueada sin acceso a la contraseña del usuario administrador.
 Para esta ocasión usaremos la utilidad de windows de `Accesibilidad` para convertirla en la CMD y poder ejecutar los comandos necesarios para crearnos un usuario con privilegios de administrador y poder cambiar la contraseña de nuestro usuario olvidado.
 
 
