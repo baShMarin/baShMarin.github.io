@@ -20,13 +20,13 @@ En primer lugar deberemos de encender nuestro equipo en modo seguro. Para ello e
 
 Para iniciar nuestro windows 11 en modo seguro deberemos de presionar la `tecla SHIFT` y seguido sin soltarla presionaremos en el icono de apagado (abajo a la derecha) y reiniciaremos el ordenador. Cuando se esté reiniciando podremos soltar la `tecla SHIFT`. Nos debería aparecer esta pantalla al reiniciarse el ordenador: 
 
-<img src="assets/HTB/Windows11/eligeunaopcion.png">
+<img src="/assets/HTB/Windows11/eligeunaopcion.png">
 
 Seguido de ello tenemos que clickar en `elegir una opción` - `solucionar un problema` - `opciones avanzadas` - `símbolo del sistema`.
 
-<img src="assets/HTB/Windows11/eligeunaopcion.png">
-<img src="assets/HTB/Windows11/solucionarunproblema.png">
-<img src="assets/HTB/Windows11/opcionesavanzadas.png">
+<img src="/assets/HTB/Windows11/eligeunaopcion.png">
+<img src="/assets/HTB/Windows11/solucionarunproblema.png">
+<img src="/assets/HTB/Windows11/opcionesavanzadas.png">
 
 * Si te fijas el cursor está encima de dónde hay que clicar.
 Una vez en la terminal de nuestro sistema operativo necesitaremos hacer los siguientes pasos...
@@ -45,7 +45,7 @@ Una vez dentro de `DISKPART`.
 ```bash
 DISKPART> list volume
 ```
-<img src="assets/HTB/Windows11/listadodevolumenes.png">
+<img src="/assets/HTB/Windows11/listadodevolumenes.png">
 
 * Nos mostrará una lista con los discos y el tamaño de ellos, en mi caso el `Volume 1` el disco `" C "` contiene el sistema operativo Windows.
 Una vez hallado el disco debemos de salirnos del `DISKPART` usaremos el comando `exit`
@@ -74,9 +74,6 @@ Seguido de mover `utilman.exe` deberemos de copiar el `CMD` en `accesibilidad` p
 C:\Windows\System32> copy cmd.exe utilman.exe
 ```
 
-Nos debe de salir en la consola algo así:
-<img src="">
-
 Seguido de ello escribiremos el comando 
 
 ```bash
@@ -87,7 +84,7 @@ Ya queda realmente poco... un par de comandos más y listo! Si te has perdido ha
 Sigamos...
 
 Después del reinicio podremos observar que si pulsamos en el botón de `ACCESIBILIDAD` se nos abrirá la `TERMINAL`
-<img src="assets/HTB/Windows11/accesibilidad.png">
+<img src="/assets/HTB/Windows11/accesibilidad.png">
 
 Una vez abierta nuestra `terminal` deberemos de ejecutar los comandos para crear nuestro usuario y poder entrar a nuestro sistema operativo, para ello debemos de escribir lo siguiente:
 
