@@ -48,7 +48,7 @@ bash evilTrust.sh -m gui
 ```
 
 Para usar el modo terminal tendriamos que sustituir el parámetro `gui` por el parámetro `terminal`.
-<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245070424264755/GUI.png?width=955&height=564">
+<img src="https://media.discordapp.net/attachments/1103281093643345932/1110245070424264755/GUI.png">
 
 
 
