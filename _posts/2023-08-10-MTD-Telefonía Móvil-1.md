@@ -28,7 +28,6 @@ En primer lugar necesitaremos bajarnos la máquina principal sobre la que vamos 
 
 <img src="/assets/HTB/Android/">
 
-
 <img src="/assets/HTB/Android/">
 <img src="/assets/HTB/Android/">
 <img src="/assets/HTB/Android/">
