@@ -109,11 +109,8 @@ Para ello haremos uso de `CEWL`
 ## CONCLUSIONES DEL ALUMNO
 
 * 1.
-
 * 2.
-
 * 3.
-
 * 4.
 
 * * *
