@@ -6,7 +6,7 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Dificil]
 ---
 
 
-¡Hola! 
+¡Hola!
 Vamos a realizar un ejercicio de esteganografía. En el tendremos que descifrar un contenido de una imagen, en este caso un vídeo.
 
 ## HERRAMIENTAS UTILIZADAS
@@ -14,8 +14,6 @@ Vamos a realizar un ejercicio de esteganografía. En el tendremos que descifrar 
 * CEWL
 * JONTHERIPPER
 * ESOTERIC DESENCRYPT
-
-
 
 * * *
 
@@ -25,7 +23,8 @@ Como podemos observar el vídeo a simple vista no aparenta tener nada, pero noso
 
 <img src="/assets/HTB/Esteganografia/preview-video.png">
 
-*Preview del vídeo que podemos encontrar en el archivo .mp4*
+* *Preview del vídeo que podemos encontrar en el archivo .mp4*
+
 
 En primer lugar usaremos la herramienta de binwalk, para descifrar contenido dentro de una imagen por ello usaremos el siguiente comando.
 
@@ -38,7 +37,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 26013883      0x18CF0BB       End of Zip archive, footer length: 22
 ```
 
-Los que nos extraerá un archivo en nuestro `Escritorio` dónde podremos encontrar un archivo llamado `bandera.txt`, viendo que el contenido del vídeo trae algo encriptado.
+Nos extraerá un archivo en nuestro `Escritorio`. En este podemos ver un archivo llamado `bandera.txt`.
 
 ```bash
 ☁  Escritorio  ls
@@ -61,17 +60,18 @@ UEsHCITV8+iUAQAAeAEAAFBLAQIfAAoACQBjALpE5UyE1fPolAEAAHgBAAALAC8AAAAAAAAAIAAA
 AAAAAABiYW5kZXJhLnBuZwoAIAAAAAAAAQAYAABwYYR+FNQBD0sSrJY51AHbTw9ChznUAQGZBwAB
 AEFFAwAAUEsFBgAAAAABAAEAaAAAANgBAAAAAA==
 ```
+
 Hemos encontrado una codificación que parece estar en base64 en `bandera.txt`.
 
 <img src="/assets/HTB/Android">
 
 * *Capturas realizadas desde mi máquina `Kali Linux`*
 
-* * * 
+* * *
 
 ## PRIMERA FLAG
 Hemos conseguido obtener una primera flag hacia nuestro objetivo, ya que sabemos que el archivo contiene algo detrás de un simple vídeo en formato `.AVI`
-Lo que parece ser una codificación en `base64`, vamos a intentar descodificarla con el siguiente comando.
+Lo que parece ser una codificación en `base64`, vamos a intentar decodificarlo con el siguiente comando ya que nuestro sistema Kali Linux tiene diccionarios en base64.
 
 ```bash
 ☁  _350911.avi.extracted  cat bandera64.txt | base64 -d
@@ -85,7 +85,8 @@ PK
                   / bandera.png
  pa�~�K��9��OB�9��AEPKh�%  
 ```
-Seguidamente podemos sacar este fichero hacia el escritorio para ver un poco mejor lo que contiene el archivo.
+
+Podemos mover este fichero hacia el escritorio para abrirlo y ver un poco mejor lo que contiene el archivo.
 
 ```bash
 ☁  _350911.avi.extracted  cat bandera64.txt | base64 -d > fichero
@@ -93,96 +94,26 @@ Seguidamente podemos sacar este fichero hacia el escritorio para ver un poco mej
 18CEDBC.zip  bandera64.txt  fichero
 ```
 
-Dentro del archivo podremos encontrar un archivo `.png` con una contraseña. 
+Dentro del archivo podremos encontrar un archivo `.png` con una contraseña.
 
 <img src="/assets/HTB/Android/">
 
-
-En el vídeo podemos observar que nos hace mención a lo que parece o un videojuego o una serie de dibujos animados llamada `MonkeyIsland`, por lo tanto podemos buscar información en páginas a ver si encontrasemos una documentación o algun foro para crearnos nuestro propio diccionario con palabras relacionadas con el videojuego para intentar desencriptar el archivo en `base64`: `bandera.txt`.
+En el vídeo podemos observar que nos hace mención a lo que parece ser un videojuego llamado `MonkeyIsland`, por lo tanto podemos buscar información en páginas a ver si encontrasemos una documentación o algún foro para crearnos nuestro propio diccionario con palabras relacionadas con el videojuego para intentar desencriptar el archivo: `bandera.txt`.
 
 Para ello haremos uso de `CEWL`
 
-### CEWL
-`CEWL` es una herramienta que nos ayuda con la creación de diccionarios, donde le podemos pasar una URL y en base al contenido que tiene crearnos un diccionario de palabras claves.
+### Cewl
+`CEWL` es una herramienta que nos ayuda con la creación de diccionarios, a la cual le podemos pasar una URL y en base al contenido que tiene crearnos un diccionario de palabras claves.
+
+### JonhTheRipper
+
+## CONCLUSIONES DEL ALUMNO
 
 
-```bash 
-
-```
-
-
-
-```bash
-DISKPART>
-```
-
-<img src="/assets/HTB/Android/">
-
-* 
-
-```bash
-DISKPART> 
-```
-
-
-
-```bash
-X:> c:
-```
-
-
-```bash
-C:> cd System32
-```
-
-```
-C:\Windows\System32> move utilman.exe utilman.exe.bak
-```
-
-```bash
-C:\Windows\System32> copy cmd.exe utilman.exe
-```
-
-Seguido de ello escribiremos el comando 
-
-```bash
-C:\Windows\System32> Wpeutil reboot
-```
-
-
-<img src="/assets/HTB/Android/">
-
-
-
-```bash
-C:\Windows\System32> net user "Nombre de usuario que quieras" /add
-```
-
-* 
-
-```bash
-C:\Windows\System32> net localgroup
-```
-
-```bash
-C:
-```
-* 
-
-`net localgroup Administradores Marin /add`
-
-
-# DENTRO DE NUESTRO SISTEMA OPERATIVO
-
-
-1. 
-2. 
-3. 
-4. c
-
-
-
-
+1.
+2.
+3.
+4.
 
 * * *
 
