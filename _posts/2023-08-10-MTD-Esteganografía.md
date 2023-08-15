@@ -18,13 +18,12 @@ Vamos a realizar un ejercicio de esteganografía. En el tendremos que descifrar 
 * * *
 
 ## PRIMEROS PASOS
-En primer lugar visualizaremos el vídeo que vamos a analizar en este caso el nombre de nuestro archivo será `350911.avi`.
+Comenzaremos visualizando el vídeo que vamos a analizar en este caso el nombre de nuestro archivo será `350911.avi`.
 Como podemos observar el vídeo a simple vista no aparenta tener nada, pero nosotros sabemos que contiene contenido oculto detrás.
 
 <img src="/assets/HTB/Esteganografia/preview-video.png">
 
 * *Preview del vídeo que podemos encontrar en el archivo .mp4*
-
 
 En primer lugar usaremos la herramienta de binwalk, para descifrar contenido dentro de una imagen por ello usaremos el siguiente comando.
 
@@ -109,10 +108,13 @@ Para ello haremos uso de `CEWL`
 
 ## CONCLUSIONES DEL ALUMNO
 
-1.
-2.
-3.
-4.
+* 1.
+
+* 2.
+
+* 3.
+
+* 4.
 
 * * *
 
