@@ -102,13 +102,12 @@ En el vídeo podemos observar que nos hace mención a lo que parece ser un video
 
 Para ello haremos uso de `CEWL`
 
-### Cewl
+### Usando CEWL
 `CEWL` es una herramienta que nos ayuda con la creación de diccionarios, a la cual le podemos pasar una URL y en base al contenido que tiene crearnos un diccionario de palabras claves.
 
-### JonhTheRipper
+### Usando JOHNTHERIPPER
 
 ## CONCLUSIONES DEL ALUMNO
-
 
 1.
 2.
