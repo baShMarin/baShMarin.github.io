@@ -62,7 +62,6 @@ AEFFAwAAUEsFBgAAAAABAAEAaAAAANgBAAAAAA==
 
 Hemos encontrado una codificación que parece estar en base64 en `bandera.txt`.
 
-<img src="/assets/HTB/Android">
 
 * *Capturas realizadas desde mi máquina `Kali Linux`*
 
@@ -95,7 +94,6 @@ Podemos mover este fichero hacia el escritorio para abrirlo y ver un poco mejor 
 
 Dentro del archivo podremos encontrar un archivo `.png` con una contraseña.
 
-<img src="/assets/HTB/Android/">
 
 En el vídeo podemos observar que nos hace mención a lo que parece ser un videojuego llamado `MonkeyIsland`, por lo tanto podemos buscar información en páginas a ver si encontrasemos una documentación o algún foro para crearnos nuestro propio diccionario con palabras relacionadas con el videojuego para intentar desencriptar el archivo: `bandera.txt`.
 
