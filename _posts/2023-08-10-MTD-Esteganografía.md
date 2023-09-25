@@ -141,7 +141,7 @@ Session completed.
 Como podemos observar nos ha dado la contraseña del fichero, en este caso sería `grog`.
 Y podemos proceder a abrir nuestro fichero.zip sabiendo ya la contraseña.
 
-![Alt text](image.png)
+<img src="/assets/HTB/Esteganografia/image.png">
 Podemos ver a simple vista un fichero .png bastante diferente. Pero no nos da resultados de nada, por lo tanto seguiremos buscando información sobre el fichero.
 
 * Le pasaremos un primer comando para ver si el contenido ocultase algo detrás, al igual que el vídeo.
@@ -172,7 +172,7 @@ Indagando un poco podemos ver que el lenguaje `PIET` se asemeja mucho a nuestra 
 
 Subiremos nuestro fichero `png` y esperaremos hasta que nos de un resultado el debugger.
 
-![Alt text](image-1.png)
+<img src="/assets/HTB/Esteganografia/image-1.png">
 
 Y como resultado podemos observar una cadena de texto con un nombre:
 `THESevenSamurai`
