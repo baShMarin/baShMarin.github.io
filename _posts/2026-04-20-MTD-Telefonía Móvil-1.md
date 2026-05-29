@@ -47,7 +47,7 @@ connected to 192.168.0.116:3535
 List of devices attached
 192.168.0.116:3535     device product:android_x86_64 model:VirtualBox device:x86_64 transport_id:1
 ```
-<!-- <img src="/assets/HTB/Telefonia/image-1.png"> -->
+<img src="/assets/HTB/Telefonia/image-1.png">
 
 Para imprimir por pantalla nuestra versión, modelo y direccion IP de nuestro dispositivo utilizaremos un script básico aprovechando la documentación de ADB.
 `https://ascii-abhishek.github.io/cs-handbook/bonus/adb_commands/`
