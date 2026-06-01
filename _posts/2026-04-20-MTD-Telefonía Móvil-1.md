@@ -9,10 +9,9 @@ tags: [eJPT, eWPT, eCPPTv2, OSCP, Dificil]
 ¡Hola!
 Vamos a realizar el primer ejercicio de Telefonía móvil. En este primer ejercicio necesitamos obtener toda la información posible del dispositivo móvil con el que vamos a trabajar. Podremos emplear cualquier recurso a nuestra disposición, siempre que sea legal.
 
-## HERRAMIENTAS UTILIZADAS
+# HERRAMIENTAS UTILIZADAS
 * Root Checker Basic
-* ADB
-* FING
+* Android Debug Bridge (ADB)
 * VirusTotal
 * MyPermission
 * Security Advisor
@@ -20,12 +19,11 @@ Vamos a realizar el primer ejercicio de Telefonía móvil. En este primer ejerci
 * * *
 
 ## PRIMEROS PASOS
-Para empezar con el ejercicio hemos comprobado nuestro dispositivo para ver la configuración de este y ver los posibles agujeros o vulnerabilidades que podemos encontrar en el.
-Con una simple aplicación llamada `Root Checker Basic`descubrimos que nuestro dispositivo Android 6.0.1 instalado en un dispositivo VirtualBox ya que lo estamos usando en un entorno de pruebas para el ejercicio, está rooteado.
-Aprovechando esta aplicación y viendo que nuestro dispositivo está rooteado hemos habilitado las opciones de desarrollador para poder conectar nuestro dispositivo a nuestra máquina virtual Kali Linux y comenzar con el análisis más profundo por consola.
+Para empezar con el ejercicio hemos realizado una primera revisión del dispositivo con el objetivo de obtener toda la información posible sobre su configuración y detectar posibles vulnerabilidades o servicios que puedan suponer un riesgo de seguridad.
+Con una simple aplicación llamada `Root Checker Basic`descubrimos que nuestro dispositivo Android 6.0.1 instalado en un dispositivo VirtualBox ya que lo estamos usando en un entorno de pruebas para el ejercicio.
 
-Hemos abierto la `Terminal` dentro de nuestro dispositivo Android y he consultado la IP para poder conectarme directamente desde mi máquina Kali Linux.
-Seguidamente hemos entrado como usuario root con el comando `su root` y hemos aceptado como superuser habilitando así el puerto 3535 para mi ADB connect.
+Una vez comprobado que el dispositivo dispone de acceso root, hemos habilitado las opciones de desarrollador para poder conectarlo a nuestra máquina Kali Linux mediante ADB y comenzar un análisis más profundo desde consola.
+
 
 ```bash
 setprop service.adb.tcp.port 3535
@@ -34,9 +32,9 @@ setprop service.adb.tcp.port 3535
 En esta ocasión vamos a utilizar el sistema `Android Debug Bridge (ADB)`.
 `Android Debug Bridge (adb)` es una herramienta de línea de comandos versátil que te permite comunicarte con un dispositivo. El comando `ADB` facilita una variedad de acciones en dispositivos, como instalar y depurar apps. `ADB` proporciona acceso a un shell Unix que puedes usar para ejecutar una variedad de comandos en un dispositivo.
 
-## Información del dispositivo.
-# Marca, modelo y dirección IP.
-Una vez habilitado el servicio de ADB por TCP en el puerto 3535 podemos acceder desde nuestra máquina Kali Linux utilizando el comando de 
+# Información del dispositivo.
+## Marca, modelo y dirección IP.
+Una vez habilitado el acceso mediante ADB sobre TCP/IP, se estableció una conexión desde mi máquina Kali Linux utilizando el siguiente comando:
 
 ```bash
 (root㉿kali)-[/home/kali]
@@ -50,7 +48,8 @@ List of devices attached
 ```
 <img src="/assets/HTB/Telefonia/image-1.png" alt="Auditoria Movil 1">
 
-Para imprimir por pantalla nuestra versión, modelo y direccion IP de nuestro dispositivo utilizaremos un script básico aprovechando la documentación de ADB.
+Para obtener información detallada del sistema se consultaron varias propiedades internas mediante el comando `getprop`:
+
 `https://ascii-abhishek.github.io/cs-handbook/bonus/adb_commands/`
 
 ```bash
@@ -60,25 +59,78 @@ innotek GmbH
 VirtualBox
 192.168.0.116
 ```
--getprop ro.product.manufacturer: Nos devuelve la marca del producto en este caso es innotek GmBh que es la empresa que distribuye VirtualBox, ya que tenemos el android instalado sobre una máquina virtual
+### ro.product.manufacturer 
+Indica el fabricante registrado por el sistema Android. En este caso aparece innotek GmbH, empresa asociada al desarrollo y distribución de VirtualBox.
 
--getprop ro.product.model: Nos devuelve el modelo del producto en este caso es VirtualBox ya que está corriendo la máquina android sobre el sistema de VirtualBox.
+### getprop ro.product.model:
+Muestra el modelo del dispositivo detectado por Android. Al tratarse de una máquina virtual, el sistema identifica el entorno como VirtualBox.
 
--getprop dhcp.eth0.ipaddress: Nos devuelve la dirección IP de nuestro dispositivo, marcandole que el dispositivo está enchufado direcctamente a la red por eth0.
+### getprop dhcp.eth0.ipaddress:
+Permite obtener la dirección IP asignada a la interfaz de red principal. La presencia de la interfaz eth0 confirma que el sistema virtualizado dispone de conectividad mediante una interfaz Ethernet virtual proporcionada por VirtualBox.
 
-## Puertos y servicios abiertos
+## Puertos y servicios abiertos.
+Con el objetivo de identificar los servicios expuestos por el dispositivo, se realizaron comprobaciones tanto desde el propio sistema Android mediante ADB como desde la máquina Kali Linux utilizando la herramienta Nmap.
+
+```bash
+┌──(kali㉿kali)-[~]
+└─$ nmap -sV 192.168.0.116
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-06-01 09:47 -0400
+Nmap scan report for 192.168.0.116
+Host is up (0.0010s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+5555/tcp open  adb     Android Debug Bridge device (name: android_x86_64; model: VirtualBox; device: x86_64)
+MAC Address: 08:00:27:2C:58:2F (Oracle VirtualBox virtual NIC)
+Service Info: OS: Android; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 17.22 seconds
+```
+
+<img src="/assets/HTB/Telefonia/image-3.png" alt="Auditoria Movil 3">
+
+* Capturas de pantallas de mi reporte de adb shell.
+Inicialmente se ejecutó el comando netstat con permisos limitados, observándose que Android restringe la visualización de determinados procesos para usuarios sin privilegios elevados.
+
+Tras obtener acceso root, fue posible consultar la información completa de los servicios en escucha:
+```bash
+┌──(kali㉿kali)-[~]
+└─$ sudo su                     
+[sudo] password for kali: 
+┌──(root㉿kali)-[/home/kali]
+└─# adb connect 192.168.0.116:3535 
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+connected to 192.168.0.116:3535
+                                                                                                                                          
+┌──(root㉿kali)-[/home/kali]
+└─# adb shell                     
+shell@x86_64:/ $ netstat -tulnp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program Name
+tcp        0      0 0.0.0.0:3535            0.0.0.0:*               LISTEN      -
+tcp        0      0 ::ffff:127.0.0.1:41168  :::*                    LISTEN      -
+udp        0      0 :::5228                 :::*                                -
+shell@x86_64:/ $ 
+130|shell@x86_64:/ $ whoami
+shell
+shell@x86_64:/ $ su root
+root@x86_64:/ # netstat -tulnp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program Name
+tcp        0      0 0.0.0.0:3535            0.0.0.0:*               LISTEN      4188/adbd
+tcp        0      0 ::ffff:127.0.0.1:41168  :::*                    LISTEN      3720/com.google.andr
+udp        0      0 :::5228                 :::*                                2109/com.google.andr
+```
+<img src="/assets/HTB/Telefonia/image-2.png" alt="Auditoria Movil 2">
 
 ## Listado de aplicaciones
 
 ## Permisos potenciales de aplicaciones
 
-## EXPLOTACIÓN
 
-
-1.
-2.
-3.
-4.
 
 * * *
 
