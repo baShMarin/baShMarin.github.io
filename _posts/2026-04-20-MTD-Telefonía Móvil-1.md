@@ -34,7 +34,8 @@ setprop service.adb.tcp.port 3535
 En esta ocasión vamos a utilizar el sistema `Android Debug Bridge (ADB)`.
 `Android Debug Bridge (adb)` es una herramienta de línea de comandos versátil que te permite comunicarte con un dispositivo. El comando `ADB` facilita una variedad de acciones en dispositivos, como instalar y depurar apps. `ADB` proporciona acceso a un shell Unix que puedes usar para ejecutar una variedad de comandos en un dispositivo.
 
-## Dentro de mi KALI LINUX
+## Información del dispositivo.
+# Marca, modelo y dirección IP.
 Una vez habilitado el servicio de ADB por TCP en el puerto 3535 podemos acceder desde nuestra máquina Kali Linux utilizando el comando de 
 
 ```bash
@@ -60,10 +61,16 @@ VirtualBox
 192.168.0.116
 ```
 -getprop ro.product.manufacturer: Nos devuelve la marca del producto en este caso es innotek GmBh que es la empresa que distribuye VirtualBox, ya que tenemos el android instalado sobre una máquina virtual
+
 -getprop ro.product.model: Nos devuelve el modelo del producto en este caso es VirtualBox ya que está corriendo la máquina android sobre el sistema de VirtualBox.
+
 -getprop dhcp.eth0.ipaddress: Nos devuelve la dirección IP de nuestro dispositivo, marcandole que el dispositivo está enchufado direcctamente a la red por eth0.
 
+## Puertos y servicios abiertos
 
+## Listado de aplicaciones
+
+## Permisos potenciales de aplicaciones
 
 ## EXPLOTACIÓN
 
