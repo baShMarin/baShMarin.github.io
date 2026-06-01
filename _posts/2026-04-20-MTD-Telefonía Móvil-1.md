@@ -234,6 +234,8 @@ package:com.funnycat.virustotal
 ### Uso de VirusTotal
 Desde VirusTotal podemos ver todas las aplicaciones instaladas por el usuario desde una interfaz gráfica.
 
+<img src="/assets/HTB/Telefonia/image-4.png" alt="Auditoria Movil 4">
+
 
 ## Permisos potenciales de aplicaciones
 Hemos hecho un análisis para ver los permisos "peligrosos" otorgados a aplicaciones y al sistema.
