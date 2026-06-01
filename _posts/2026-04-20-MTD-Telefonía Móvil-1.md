@@ -127,11 +127,177 @@ udp        0      0 :::5228                 :::*                                
 <img src="/assets/HTB/Telefonia/image-2.png" alt="Auditoria Movil 2">
 
 ## Listado de aplicaciones
+```bash
+┌──(root㉿kali)-[/home/kali]
+└─# adb shell pm list packages    
+package:com.google.android.youtube
+package:com.example.android.rssreader
+package:com.android.providers.telephony
+package:org.android_x86.analytics
+package:com.google.android.googlequicksearchbox
+package:com.android.providers.calendar
+package:com.android.providers.media
+package:com.google.android.onetimeinitializer
+package:com.android.wallpapercropper
+package:com.android.documentsui
+package:com.android.galaxy4
+package:com.mypermissions.mypermissions
+package:com.android.externalstorage
+package:com.android.htmlviewer
+package:com.android.mms.service
+package:com.android.providers.downloads
+package:com.android.browser
+package:com.google.android.configupdater
+package:com.android.soundrecorder
+package:com.android.defcontainer
+package:com.android.providers.downloads.ui
+package:com.android.vending
+package:com.android.pacprocessor
+package:com.joeykrim.rootcheck
+package:com.android.certinstaller
+package:com.android.carrierconfig
+package:com.belarc.securityadvisor
+package:android
+package:com.android.contacts
+package:com.android.camera2
+package:com.android.launcher3
+package:com.android.backupconfirm
+package:com.android.statementservice
+package:com.google.android.gm
+package:com.overlook.android.fing
+package:com.android.wallpaper.holospiral
+package:com.android.calendar
+package:com.android.phasebeam
+package:com.google.android.setupwizard
+package:com.android.providers.settings
+package:com.android.sharedstoragebackup
+package:com.android.printspooler
+package:com.android.dreams.basic
+package:com.android.webview
+package:com.android.inputdevices
+package:com.android.server.telecom
+package:com.google.android.syncadapters.contacts
+package:com.example.android.notepad
+package:com.android.keychain
+package:com.android.chrome
+package:com.android.dialer
+package:com.android.gallery3d
+package:com.google.android.gms
+package:com.google.android.gsf
+package:com.android.calllogbackup
+package:com.google.android.partnersetup
+package:com.android.packageinstaller
+package:com.android.basicsmsreceiver
+package:com.svox.pico
+package:com.android.proxyhandler
+package:com.cyanogenmod.filemanager
+package:com.android.inputmethod.latin
+package:com.google.android.feedback
+package:com.google.android.syncadapters.calendar
+package:com.android.managedprovisioning
+package:com.google.android.gsf.login
+package:com.android.wallpaper.livepicker
+package:jackpal.androidterm
+package:com.google.android.backuptransport
+package:com.android.settings
+package:com.cyanogenmod.eleven
+package:com.android.calculator2
+package:org.android_x86.hardwarecollector
+package:com.android.wallpaper
+package:com.android.vpndialogs
+package:com.android.email
+package:com.android.phone
+package:com.android.shell
+package:com.android.providers.userdictionary
+package:com.android.location.fused
+package:com.android.deskclock
+package:com.android.systemui
+package:com.android.bluetoothmidiservice
+package:com.funnycat.virustotal
+package:com.android.bluetooth
+package:com.android.development
+package:com.android.providers.contacts
+package:com.android.captiveportallogin
+```
+
+Y estas las aplicaciones instaladas por el usuario.
+```bash
+┌──(root㉿kali)-[/home/kali]
+└─# adb shell pm list packages -3
+package:com.mypermissions.mypermissions
+package:com.joeykrim.rootcheck
+package:com.belarc.securityadvisor
+package:com.overlook.android.fing
+package:com.android.chrome
+package:com.funnycat.virustotal
+```
+### Uso de VirusTotal
+Desde VirusTotal podemos ver todas las aplicaciones instaladas por el usuario desde una interfaz gráfica.
+
 
 ## Permisos potenciales de aplicaciones
+Hemos hecho un análisis para ver los permisos "peligrosos" otorgados a aplicaciones y al sistema.
 
+He filtrado para que los muestre en grupos todos los "permisos peligrosos".
 
+```bash
+──(root㉿kali)-[/home/kali]
+└─# adb shell pm list permissions -g -d
+Dangerous Permissions:
 
+group:com.google.android.gms.permission.CAR_INFORMATION
+  permission:com.google.android.gms.permission.CAR_VENDOR_EXTENSION
+  permission:com.google.android.gms.permission.CAR_MILEAGE
+  permission:com.google.android.gms.permission.CAR_FUEL
+
+group:android.permission-group.CONTACTS
+  permission:android.permission.WRITE_CONTACTS
+  permission:android.permission.GET_ACCOUNTS
+  permission:android.permission.READ_CONTACTS
+
+group:android.permission-group.PHONE
+  permission:android.permission.READ_CALL_LOG
+  permission:android.permission.READ_PHONE_STATE
+  permission:android.permission.CALL_PHONE
+  permission:android.permission.WRITE_CALL_LOG
+  permission:android.permission.USE_SIP
+  permission:android.permission.PROCESS_OUTGOING_CALLS
+  permission:com.android.voicemail.permission.ADD_VOICEMAIL
+
+group:android.permission-group.CALENDAR
+  permission:android.permission.READ_CALENDAR
+  permission:android.permission.WRITE_CALENDAR
+
+group:android.permission-group.CAMERA
+  permission:android.permission.CAMERA
+
+group:android.permission-group.SENSORS
+  permission:android.permission.BODY_SENSORS
+
+group:android.permission-group.SUPERUSER
+  permission:android.permission.ACCESS_SUPERUSER
+
+group:android.permission-group.LOCATION
+  permission:android.permission.ACCESS_FINE_LOCATION
+  permission:com.google.android.gms.permission.CAR_SPEED
+  permission:android.permission.ACCESS_COARSE_LOCATION
+
+group:android.permission-group.STORAGE
+  permission:android.permission.READ_EXTERNAL_STORAGE
+  permission:android.permission.WRITE_EXTERNAL_STORAGE
+
+group:android.permission-group.MICROPHONE
+  permission:android.permission.RECORD_AUDIO
+
+group:android.permission-group.SMS
+  permission:android.permission.READ_SMS
+  permission:android.permission.RECEIVE_WAP_PUSH
+  permission:android.permission.RECEIVE_MMS
+  permission:android.permission.RECEIVE_SMS
+  permission:android.permission.SEND_SMS
+  permission:android.permission.READ_CELL_BROADCASTS
+```
+Todos los comandos usados por adb los he sacado directamente desde la documentación del propio ADB
 * * *
 
 *__Esto es un trabajo realizado para MasterD con fines didácticos, no está enseñado para otro de sus usos.__*
