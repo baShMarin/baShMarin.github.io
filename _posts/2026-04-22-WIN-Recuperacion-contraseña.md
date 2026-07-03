@@ -16,17 +16,17 @@ Para esta ocasión usaremos la utilidad de windows de `Accesibilidad` para conve
 # PRIMEROS PASOS
 En primer lugar deberemos de encender nuestro equipo en modo seguro. Para ello encenderemos nuestro ordenador hasta llegar a la pantalla de Inicio.
 
-<img src="/assets/HTB/Windows11/inicio.png">
+<img src="/assets/HTB/Windows11/inicio.png" alt="Inicio">
 
 Para iniciar nuestro windows 11 en modo seguro deberemos de presionar la `tecla SHIFT` y seguido sin soltarla presionaremos en el icono de apagado (abajo a la derecha) y reiniciaremos el ordenador. Cuando se esté reiniciando podremos soltar la `tecla SHIFT`. Nos debería aparecer esta pantalla al reiniciarse el ordenador: 
 
-<img src="/assets/HTB/Windows11/eligeunaopcion.png">
+<img src="/assets/HTB/Windows11/eligeunaopcion.png" alt="Elige una opcion">
 
 Seguido de ello tenemos que clickar en `elegir una opción` - `solucionar un problema` - `opciones avanzadas` - `símbolo del sistema`.
 
-<img src="/assets/HTB/Windows11/eligeunaopcion.png">
-<img src="/assets/HTB/Windows11/solucionarunproblema.png">
-<img src="/assets/HTB/Windows11/opcionesavanzadas.png">
+<img src="/assets/HTB/Windows11/eligeunaopcion.png" alt="Elige una opcion 2">
+<img src="/assets/HTB/Windows11/solucionarunproblema.png" alt="Solucionar un problema">
+<img src="/assets/HTB/Windows11/opcionesavanzadas.png" alt="Opciones avanzadas">
 
 * Si te fijas el cursor está encima de dónde hay que clicar.
 Una vez en la terminal de nuestro sistema operativo necesitaremos hacer los siguientes pasos...
@@ -45,7 +45,7 @@ Una vez dentro de `DISKPART`.
 ```bash
 DISKPART> list volume
 ```
-<img src="/assets/HTB/Windows11/listadodevolumenes.png">
+<img src="/assets/HTB/Windows11/listadodevolumenes.png" alt="Listado volumenes">
 
 * Nos mostrará una lista con los discos y el tamaño de ellos, en mi caso el `Volume 1` el disco `" C "` contiene el sistema operativo Windows.
 Una vez hallado el disco debemos de salirnos del `DISKPART` usaremos el comando `exit`
@@ -83,8 +83,8 @@ C:\Windows\System32> Wpeutil reboot
 Ya queda realmente poco... un par de comandos más y listo! Si te has perdido hasta aquí recuerda que puedes consultar conmigo cualquier duda, en el perfil tienes mi contacto.
 Sigamos...
 
-Después del reinicio podremos observar que si pulsamos en el botón de `ACCESIBILIDAD` se nos abrirá la `TERMINAL`
-<img src="/assets/HTB/Windows11/accesibilidad.png">
+Después del reinicio podremos observar que si pulsamos en el botón de `ACCESIBILIDAD` se nos abrirá la `TERMINAL`.
+<img src="/assets/HTB/Windows11/accesibilidad.png" alt="Accesibilidad">
 
 Una vez abierta nuestra `terminal` deberemos de ejecutar los comandos para crear nuestro usuario y poder entrar a nuestro sistema operativo, para ello debemos de escribir lo siguiente:
 
@@ -115,7 +115,7 @@ Una vez dentro de nuestro sistema operativo podremos ver que ya tenemos acceso a
 En este caso queremos recuperar nuestra antigua cuenta para recuperar la información que teníamos en el usuario, para ello haremos los siguientes pasos:
 
 1. Clic derecho en el icono de `Windows`
-2. Clicaremos en `Administración de equipos.`
+2. Clicaremos en `Administración de equipos.``
 3. Clicaremos seguidamente en `Usuarios y grupos locales`
 4. Nos aparecera el nombre de `Usuarios` dónde haremos clic derecho y `establecer contraseña`
 
