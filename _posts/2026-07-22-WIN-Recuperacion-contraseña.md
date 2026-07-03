@@ -2,7 +2,7 @@
 title: HTB - Recuperacion de contraseña
 published: true
 categories: [Windows]
-tags: [eJPT, eWPT, eCPPTv2, OSCP, Dificil]
+tags: [Windows]
 ---
 
 
