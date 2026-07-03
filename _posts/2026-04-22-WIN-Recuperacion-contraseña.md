@@ -115,7 +115,7 @@ Una vez dentro de nuestro sistema operativo podremos ver que ya tenemos acceso a
 En este caso queremos recuperar nuestra antigua cuenta para recuperar la información que teníamos en el usuario, para ello haremos los siguientes pasos:
 
 1. Clic derecho en el icono de `Windows`
-2. Clicaremos en `Administración de equipos.``
+2. Clicaremos en `Administración de equipos.`
 3. Clicaremos seguidamente en `Usuarios y grupos locales`
 4. Nos aparecera el nombre de `Usuarios` dónde haremos clic derecho y `establecer contraseña`
 
